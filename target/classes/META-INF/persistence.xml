@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="smartcities">
+	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+	<class>br.com.fiap.entity.Produto</class> <!--Colocar o nome do pacote mais da classe que você criou, para a classe funcionar-->
+	<class>br.com.fiap.entity.Fornecedor</class>
+	<properties>
+		<property name="hibernate.show_sql" value="true" /> <!--Mostrar o comando SQL que o framework manda pro BD no console do eclipse-->
+		<property name="hibernate.hbm2ddl.auto" value="update" /> <!--O próprio Hibernate vai dar Create Table sozinho (caso não tenha o BD criado), só vai precisar 
+		criar os objetos (colunas e etc). Update: Toda vez que for alterado algo, ele da um update sozinho. Create: Da um DROP sozinho e cria outro por cima, 
+		automaticamente.-->
+		<property name="hibernate.format_sql" value="true" /> <!--Deixar o SQL formatado, deixando o código mais legível.-->
+		<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect" /> <!--Vai traduzir o que você escreve no JPA para o Banco (Oracle).-->
+		<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" /> <!--Driver a ser utilizado. Nesse caso é do Banco da Oracle.-->
+		<property name="javax.persistence.jdbc.user" value="DESAFIO02" /> <!--Usuário desse Banco-->
+		<property name="javax.persistence.jdbc.password" value="DESAFIO02" /> <!--Senha desse usuário desse banco-->
+		<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl" /> <!--URL de conexão. Nesse caso é da FIAP.-->
+	</properties>
+	</persistence-unit>
+</persistence>
